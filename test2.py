@@ -23,23 +23,22 @@ You will give the students tasks to do in which they can replicate the topic lea
 st.session_state.concepts = ["concept 1", "concept 2", "concept 3"]
 current_concept = 0
 st.title("MindPath: STEM AI Tutor")
-st.image("logo_mind.png")
 st.header("Let's make STEM learning fun by AI-Powered tutoring!")
 st.write("MindPath - A socratic method based AI tutor for middle schoolers~")
 st.markdown("<span style='color:purple'>This text is purple</span>", unsafe_allow_html=True)
 name = st.text_input("What's your name?")
 if name:
     st.write(f"Hello, {name}!")
-
-st.subheader(f"Hi, {name}! Here's how to learn with me:")
-st.markdown("""
+if name:
+    st.subheader(f"Hi, {name}! Here's how to learn with me:")
+    st.markdown("""
 1. **Click the checkbox** below when you're ready to start learning.  
 2. **Enter a topic** you want to learn about in the text box.  
 3. The chatbot will provide an explanation and guide you step by step.  
 4. Feel free to **ask questions** for clarification.  
 5. Once you're ready, take a **quiz** to test your understanding!  
 """)
-st.info(f"💡 Tip: {name} if you get stuck, try asking the chatbot for **examples** or a simpler explanation! Happy Learning!!")
+    st.info(f"💡 Tip: {name} if you get stuck, try asking the chatbot for **examples** or a simpler explanation! Happy Learning!!")
 age = st.slider("What is your age group?",6,20)
 st.write(f"Let me teach you according to your age: {age}.")
 st.checkbox("I'm ready to start learning!")
