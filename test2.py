@@ -23,6 +23,7 @@ You will give the students tasks to do in which they can replicate the topic lea
 st.session_state.concepts = ["concept 1", "concept 2", "concept 3"]
 current_concept = 0
 st.title("MindPath: STEM AI Tutor")
+st.image("logo_mind.png")
 st.header("Let's make STEM learning fun by AI-Powered tutoring!")
 st.write("MindPath - A socratic method based AI tutor for middle schoolers~")
 st.markdown("<span style='color:purple'>This text is purple</span>", unsafe_allow_html=True)
