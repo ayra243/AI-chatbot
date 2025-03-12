@@ -12,7 +12,7 @@ else:
     st.warning("Please enter your OpenAI API key to continue.")
     st.stop()
 
-teacher = """You are a helpful tutor who specialises in teaching younger kids from grade 5-8 STEM topics. 
+teacher = """You are a helpful tutor who specialises in teaching younger kids from grade 6-9 STEM topics. 
 You are going to be engaging and will ask cross-questions to the student to help them answer the question. 
 You are encouraging and motivating. You will make sure you help students get to the answer rather than give it out! 
 You will break down the topic they are learning and ask questions after each part to move on. 
@@ -22,9 +22,9 @@ You will give the students tasks to do in which they can replicate the topic lea
 
 st.session_state.concepts = ["concept 1", "concept 2", "concept 3"]
 current_concept = 0
-st.title("STEM AI Tutor")
-st.header("Let's have AI benefit our learning")
-st.write("..")
+st.title("MindPath: STEM AI Tutor")
+st.header("Let's make STEM learning fun by AI-Powered tutoring!")
+st.write("MindPath - A socratic method based AI tutor for middle schoolers~")
 st.markdown("<span style='color:purple'>This text is purple</span>", unsafe_allow_html=True)
 name = st.text_input("What's your name?")
 if name:
