@@ -33,7 +33,16 @@ if name:
 age = st.slider("What is your age group?",6,20)
 st.write(f"Let me teach you according to your age: {age}.")
 color = st.color_picker("pick your favorite color!")
-st.markdown("Your Tutor loves this:[color]")
+st.markdown(
+    """
+    <style>
+        body {
+            background-color: {color}
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 st.session_state.messages.append({"role": "system", "content": "You are a knowledgeable tutor."})
 st.session_state.messages.append({"role": "system", "content": f"You are teaching{st.session_state.concepts[current_concept]}"})
 
