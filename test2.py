@@ -30,11 +30,11 @@ name = st.text_input("What's your name?")
 if name:
     st.write(f"Hello, {name}!")
 
-topic = st.selectbox(
+age = st.selectbox(
     "What is your age group?",
     [" ","8-10", "11-12", "13-14", "15+"]
 )
-st.write(f"Lets learn about {topic}.")
+st.write(f"Let me teach you according to {age}.")
 st.session_state.messages.append({"role": "system", "content": "You are a knowledgeable tutor."})
 st.session_state.messages.append({"role": "system", "content": f"You are teaching{st.session_state.concepts[current_concept]}"})
 
