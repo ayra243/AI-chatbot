@@ -41,7 +41,7 @@ if name:
     st.info(f"💡 Tip: {name} if you get stuck, try asking the chatbot for **examples** or a simpler explanation! Happy Learning!!")
 age = st.slider("What is your age group?",6,20)
 st.write(f"Let me teach you according to your age: {age}.")
-st.session_state.messages.append({"role": "system", "content": teacher + "you are teaching " + name + " who is " + age + "  years old"})
+st.session_state.messages.append({"role": "system", "content": teacher + "you are teaching " + name + " who is " + str(age) + "  years old"})
 st.checkbox("I'm ready to start learning!")
 st.session_state.messages.append({"role": "system", "content": "You are a knowledgeable tutor."})
 st.session_state.messages.append({"role": "system", "content": f"You are teaching{st.session_state.concepts[current_concept]}"})
@@ -67,5 +67,5 @@ if user_input:
     if  student_understanding == "Yes":
         with st.chat_message("system"):
             st.write("Great! You now understand the concept")
-        current_concepts = current_concepts + 1
+        current_concept = current_concept + 1
         st.session_state.messages.append({"role": "system", "content": f"You are teaching{st.session_state.concepts[current_concept]}"})
