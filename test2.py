@@ -59,7 +59,7 @@ if user_input:
     chatbot_response = response.choices[0].message.content
     with st.chat_message("system"):
         st.write(chatbot_response)
-    student_understanding = st.selectbox(
+    student_understanding = st.feedback(
     "Do you understand?",
     ["","Yes", "No", "A little"]
 )
