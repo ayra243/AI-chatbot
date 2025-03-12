@@ -32,11 +32,10 @@ if name:
 
 age = st.slider("What is your age group?",6,20)
 st.write(f"Let me teach you according to your age: {age}.")
-st.checkbox("I'm ready to start learning!")
 st.session_state.messages.append({"role": "system", "content": "You are a knowledgeable tutor."})
 st.session_state.messages.append({"role": "system", "content": f"You are teaching{st.session_state.concepts[current_concept]}"})
-
-user_input = st.chat_input("Type your message here...")
+if st.checkbox("I'm ready to start learning!")
+    user_input = st.chat_input("Type your message here...")
 if user_input:
     st.session_state.messages.append({"role": "user", "content": user_input})
     with st.chat_message("user"):
