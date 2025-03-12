@@ -30,8 +30,10 @@ name = st.text_input("What's your name?")
 if name:
     st.write(f"Hello, {name}!")
 
-age = st.slider("What is your age group?",6,100)
+age = st.slider("What is your age group?",6,20)
 st.write(f"Let me teach you according to your age: {age}.")
+color = st.color_picker("pick your favorite color!")
+st.markdown("Your Tutor loves this:[color]")
 st.session_state.messages.append({"role": "system", "content": "You are a knowledgeable tutor."})
 st.session_state.messages.append({"role": "system", "content": f"You are teaching{st.session_state.concepts[current_concept]}"})
 
