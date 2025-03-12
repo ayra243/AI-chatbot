@@ -30,6 +30,15 @@ name = st.text_input("What's your name?")
 if name:
     st.write(f"Hello, {name}!")
 
+st.subheader("How to Use the Chatbot:")
+st.markdown("""
+1. **Click the checkbox** below when you're ready to start learning.  
+2. **Enter a topic** you want to learn about in the text box.  
+3. The chatbot will provide an explanation and guide you step by step.  
+4. Feel free to **ask questions** for clarification.  
+5. Once you're ready, take a **quiz** to test your understanding!  
+""")
+st.info("💡 Tip: If you get stuck, try asking the chatbot for examples or a simpler explanation!")
 age = st.slider("What is your age group?",6,20)
 st.write(f"Let me teach you according to your age: {age}.")
 st.checkbox("I'm ready to start learning!")
