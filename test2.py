@@ -60,12 +60,13 @@ if user_input:
     chatbot_response = response.choices[0].message.content
     with st.chat_message("system"):
         st.write(chatbot_response)
-    student_understanding = st.selectbox(
-    "Do you understand?",
-    ["","Yes", "No", "A little"]
-)
+    student_understanding = st.chat_input(
+    "Do you understand?")
     if  student_understanding == "Yes":
         with st.chat_message("system"):
             st.write("Great! You now understand the concept")
         current_concept = current_concept + 1
         st.session_state.messages.append({"role": "system", "content": f"You are teaching{st.session_state.concepts[current_concept]}"})
+    else: 
+        with st.chat_message("system"):
+            st.write("no worries! I'll explain again!")
