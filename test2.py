@@ -45,7 +45,7 @@ st.session_state.messages.append({"role": "system", "content": teacher + "you ar
 st.checkbox("I'm ready to start learning!")
 st.session_state.messages.append({"role": "system", "content": "You are a knowledgeable tutor."})
 st.session_state.messages.append({"role": "system", "content": f"You are teaching{st.session_state.concepts[current_concept]}"})
-st.image("logo_mind.png")
+st.image("logo_mind.png", width=20, height=20)
 
 user_input = st.chat_input("Type your message here...")
 if user_input:
