@@ -32,7 +32,7 @@ if name:
 
 topic = st.selectbox(
     "What is your age group?",
-    ["8-10", "11-12", "13-14", "15+"]
+    [" ","8-10", "11-12", "13-14", "15+"]
 )
 st.write(f"Lets learn about {topic}.")
 st.session_state.messages.append({"role": "system", "content": "You are a knowledgeable tutor."})
