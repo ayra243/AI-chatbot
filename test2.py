@@ -31,8 +31,8 @@ if name:
     st.write(f"Hello, {name}!")
 
 topic = st.selectbox(
-    "What do you want to learn about today?",
-    ["Water Cycle", "Long Division", "Photosythesis", "Physics"]
+    "What is your age group?",
+    ["8-10", "11-12", "13-14", "15+"]
 )
 st.write(f"Lets learn about {topic}.")
 st.session_state.messages.append({"role": "system", "content": "You are a knowledgeable tutor."})
