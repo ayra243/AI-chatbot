@@ -22,7 +22,8 @@ You will give the students tasks to do in which they can replicate the topic lea
 
 st.session_state.concepts = ["concept 1", "concept 2", "concept 3"]
 current_concept = 0
-st.title("MindPath: STEM AI Tutor")
+st.image("logo_mind.png", width=150)
+st.title("MindPath: STEM AI Tutor") 
 st.header("Let's make STEM learning fun by AI-Powered tutoring!")
 st.write("MindPath - A socratic method based AI tutor for middle schoolers~")
 st.markdown("<span style='color:purple'>This text is purple</span>", unsafe_allow_html=True)
@@ -45,7 +46,7 @@ st.session_state.messages.append({"role": "system", "content": teacher + "you ar
 st.checkbox("I'm ready to start learning!")
 st.session_state.messages.append({"role": "system", "content": "You are a knowledgeable tutor."})
 st.session_state.messages.append({"role": "system", "content": f"You are teaching{st.session_state.concepts[current_concept]}"})
-st.image("logo_mind.png", width=20, height=20)
+st.file_uploader("upload your work and get feedback!")
 
 user_input = st.chat_input("Type your message here...")
 if user_input:
@@ -71,3 +72,4 @@ if user_input:
     else: 
         with st.chat_message("system"):
             st.write("no worries! I'll explain again!")
+
