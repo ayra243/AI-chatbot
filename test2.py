@@ -49,6 +49,7 @@ st.session_state.messages.append({"role": "system", "content": f"You are teachin
 ready = st.checkbox("I'm ready to start learning!")
 if ready:
     user_input = st.chat_input("Type your message here...") 
+    st.file_uploader("upload your work and get feedback!")
 else:
     user_input = None  
 
@@ -77,4 +78,3 @@ if user_input:
         with st.chat_message("system"):
             st.write("no worries! I'll explain again!")
 
-st.file_uploader("upload your work and get feedback!")
