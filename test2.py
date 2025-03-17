@@ -26,7 +26,7 @@ st.image("logo_mind.png", width=150)
 st.title("MindPath: STEM AI Tutor") 
 st.header("Let's make STEM learning fun by AI-Powered tutoring!")
 st.write("MindPath - A socratic method based AI tutor for middle schoolers~")
-st.markdown("<span style='color:purple'>This text is purple</span>", unsafe_allow_html=True)
+st.markdown("<span style='color:purple'>Time to learn!</span>", unsafe_allow_html=True)
 name = st.text_input("What's your name?")
 if name:
     st.write(f"Hello, {name}!")
