@@ -25,24 +25,25 @@ current_concept = 0
 st.image("logo_mind.png", width=150)
 st.title("MindPath: STEM AI Tutor") 
 st.header("Let's make STEM learning fun by AI-Powered tutoring!")
-st.write("MindPath - A socratic method based AI tutor for middle schoolers~")
-st.markdown("<span style='color:purple'>Time to learn!</span>", unsafe_allow_html=True)
+st.markdown("<span style='color:purple'>A Socratic Method Based AI Tutor for Middle Schoolers</span>", unsafe_allow_html=True)
 name = st.text_input("What's your name?")
 if name:
-    st.write(f"Hello, {name}!")
+    st.write(f"Hi {name}!")
 if name:
-    st.subheader(f"Hi, {name}! Here's how to learn with me:")
+    st.subheader(f"Hello from your AI Tutor, {name}! Here's how to learn with me:")
     st.markdown("""
-1. **Click the checkbox** below when you're ready to start learning.  
-2. **Enter a topic** you want to learn about in the text box.  
-3. The chatbot will provide an explanation and guide you step by step.  
-4. Feel free to **ask questions** for clarification.  
-5. Once you're ready, take a **quiz** to test your understanding!  
+1. **Select** your **age**, **grade** and **name** in the sliders below. 
+2. **Click the checkbox** below when you're ready to start learning. 
+3. **Enter a topic** you want to learn about in the text box.  
+4. The chatbot will provide an **explanation** and guide you **step by step**.  
+5. Feel free to **ask questions** for clarification.  
+6. Once you're ready, take a **quiz** to test your understanding!  
 """)
-    st.info(f"💡 Tip: {name} if you get stuck, try asking the chatbot for **examples** or a simpler explanation! Happy Learning!!")
+    st.info(f"💡 Tip: **{name}** if you get stuck, try asking the chatbot for **examples** or a simpler explanation! Happy Learning!!")
 age = st.slider("What is your age group?",6,20)
-st.write(f"Let me teach you according to your age: {age}.")
-st.session_state.messages.append({"role": "system", "content": teacher + "you are teaching " + name + " who is " + str(age) + "  years old"})
+grade = st.slider("What grade are you in?",6,11)
+st.write(f"Let me teach you according to your age: {age} and your grade: {grade}.")
+st.session_state.messages.append({"role": "system", "content": teacher + "you are teaching " + name + " who is " + str(age) + "  years old" + " and studies in grade" + str(grade)})
 st.session_state.messages.append({"role": "system", "content": "You are a knowledgeable tutor."})
 st.session_state.messages.append({"role": "system", "content": f"You are teaching{st.session_state.concepts[current_concept]}"})
 
