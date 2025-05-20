@@ -6,8 +6,8 @@ import os
 
 load_dotenv()
 
-client = openai.OpenAI(api_key=os.getenv('OPENAI_API_KEY')) 
-#client = openai.OpenAI(api_key="OPENAI_API_KEY")  
+#client = openai.OpenAI(api_key=os.getenv('OPENAI_API_KEY')) 
+client = openai.OpenAI(api_key=st.secrets["OPENAI_API_KEY"])  
 
 
 def get_student_id_from_openai():
@@ -48,7 +48,7 @@ if st.session_state.student_id and not st.session_state.quiz_completed:
     **Choose a topic you have little or no prior knowledge of.**  
     **Enter your Student ID** when asked on the site.
     """)
-    st.link_button("Go to Quiz Website", "https://docs.google.com/document/d/1ic_EU3Nw1muGfZzAkSTwAsidY5g3Rm7hL23f2sZRsKs/edit?usp=sharing")
+    st.link_button("Go to Quiz Website", "https://ai-chatbot-grvylr92fzxeyht8awdhia.streamlit.app/")
     st.session_state.quiz_completed = True  # Mark quiz as completed after the link is clicked
 
 # Step 3 - After Quiz, Return to Page
@@ -64,7 +64,7 @@ if st.session_state.quiz_completed and not st.session_state.chatbot_completed:
     Learn about the **same topic** you selected in the pre-quiz.  
     Follow all instructions on the chatbot site.
     """)
-    st.link_button("Go to Chatbot", "https://docs.google.com/document/d/1ic_EU3Nw1muGfZzAkSTwAsidY5g3Rm7hL23f2sZRsKs/edit?usp=sharing")
+    st.link_button("Go to Chatbot", "https://ai-chatbot-h5ltq4kyzrgrxgrug4bnbv.streamlit.app/")
     st.session_state.chatbot_completed = True  # Mark chatbot as completed after the link is clicked
 
 # Step 5 & 6 - Return Again & Post-Quiz
@@ -77,7 +77,7 @@ if st.session_state.chatbot_completed:
     Take the final quiz, then complete a short survey (return to this tab after the quiz for survey).  
     **Use your Student ID again** when asked.
     """)
-    st.link_button("Go to Quiz", "https://your-postquiz-url.com")
+    st.link_button("Go to Quiz", "https://ai-chatbot-grvylr92fzxeyht8awdhia.streamlit.app/")
     st.link_button("Survey", "https://docs.google.com/forms/d/e/1FAIpQLScWdeBLpsjYMI1UKbqRIeL_ywOuMwuaS1oH20Ww8Q4KmncOJQ/viewform?usp=header")
 
 # Footer
