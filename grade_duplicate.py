@@ -234,7 +234,7 @@ def grade_answers(student_answers, rubric, quiz_data):
                 The student has these answers: {student_answers} and the questions are from {quiz_data}
 
                 RESPONSE FORMAT:
-                At the very end of the quiz, when all the questions hav been reviewed, make sure to give TOTAL_SCORE by student out of total points.
+                At the very end of the quiz, when all the questions hav been reviewed, make sure to give TOTAL_SCORE by student out of total points (this is sum of all scores).
                 For each question, return your evaluation in this exact format with the delimiter '|||' between questions: 
                 QUESTION_NUMBER: [question number]
                 STUDENT_ANSWER: [student's answer]
