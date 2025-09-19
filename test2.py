@@ -344,13 +344,6 @@ if ready and st.session_state.openai_initialized:
                 st.session_state.messages.append({"role": "assistant", "content": response})
                 with st.chat_message("assistant"):
                     st.write(response)
-        
-        # File upload for assignments
-        uploaded_file = st.file_uploader("Upload your work and get feedback or ask visual questions!", key=f"file_upload_{len(st.session_state.messages)}")
-        if uploaded_file is not None:
-            # Handle uploaded file
-            st.success("File uploaded successfully! The tutor will review it.")
-            # You can add code here to process the file if needed
 
 # Insert student info into Supabase
 if name and age and grade and st.session_state.openai_initialized:
