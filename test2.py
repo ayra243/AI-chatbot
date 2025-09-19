@@ -292,7 +292,10 @@ if name:
     st.info(f"💡 Tip: **{name}** if you get stuck, try asking the chatbot for **examples** or a simpler explanation!")
 
 # Age and Grade Input
-age = st.text_input("What is your age group?")
+age = st.text_input("What is your age group? (please enter a number only)")
+
+
+
 grade = st.text_input("What grade are you in?")
 
 # Set up tutor system message
