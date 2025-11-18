@@ -351,7 +351,7 @@ else:
         col1, col2 = st.columns(2)
         with col1: 
             if st.session_state.current_question_index > 0:
-                st.button("previous question", on_click=questions_move_back)
+                st.button("Previous question", on_click=questions_move_back)
         with col2: 
             if len(st.session_state.questions) - 2 > st.session_state.current_question_index:
                 st.button("Next question", on_click=questions_move_on)
