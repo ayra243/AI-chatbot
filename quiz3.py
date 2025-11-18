@@ -37,7 +37,12 @@ def init_supabase():
     key = st.secrets["SUPABASE_KEY"] 
     return create_client(url, key)
 
+import streamlit as st
 
+if not st.user.is_logged_in:
+    st.title("Please log in")
+    st.login()
+    st.stop()
 
 
 def basic(name, difficulty, topic):
