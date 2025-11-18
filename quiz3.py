@@ -322,12 +322,12 @@ def submit_button():
 
 
 st.image("logo_mind.png", width=150)
-st.title("MindPath: STEM AI Tutor Quiz") 
+st.title(" STEM AI Tutor Quiz") 
 st.header("Let's make STEM learning fun by AI-Powered tutoring!")
-st.markdown("<span style='color:purple'>A Socratic Method Based AI Tutor for Middle Schoolers</span>", unsafe_allow_html=True)
+st.markdown("<span style='color:purple'>IB Learning made easier</span>", unsafe_allow_html=True)
 
 if not st.session_state.quiz_info:
-    st.text_input("What's your student ID?", key="student_name")
+    st.text_input("What's your name?", key="student_name")
     st.selectbox("Choose the level of **difficulty** for the quiz!", [" ", "easy", "medium", "hard"], key="quiz_difficulty")
     st.text_input("What topic do you want the quiz on?", key="topic_main")
     st.button("Generate Quiz", on_click=quiz_button)
