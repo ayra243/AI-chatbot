@@ -365,7 +365,7 @@ else:
                 st.button("previous question", on_click=questions_move_back)
         with col2: 
             if len(st.session_state.questions) - 2 > st.session_state.current_question_index:
-                st.button("next question", on_click=questions_move_on)
+                st.button("Next question", on_click=questions_move_on)
         st.write(st.session_state.student_answer)
 
     else:
