@@ -5,6 +5,15 @@ import streamlit as st
 from supabase import create_client
 import json 
 
+if not st.user.is_logged_in:
+    st.title("Please log in to continue")
+    st.login()  # Uses default provider in secrets.toml
+    st.stop()   # Prevent the rest of the app from running
+
+with st.sidebar:
+    st.write(f"Logged in as: {st.user.name}")
+    if st.button("Log out"):
+        st.logout()
 
 
 if "quiz_id" not in st.session_state:
@@ -36,6 +45,8 @@ def init_supabase():
     url = st.secrets["SUPABASE_URL"] 
     key = st.secrets["SUPABASE_KEY"] 
     return create_client(url, key)
+
+
 
 
 
@@ -322,12 +333,12 @@ def submit_button():
 
 
 st.image("logo_mind.png", width=150)
-st.title("MindPath: STEM AI Tutor Quiz") 
+st.title("Quiz Generator") 
 st.header("Let's make STEM learning fun by AI-Powered tutoring!")
-st.markdown("<span style='color:purple'>A Socratic Method Based AI Tutor for Middle Schoolers</span>", unsafe_allow_html=True)
+st.markdown("<span style='color:purple'>IB Made Easier!!</span>", unsafe_allow_html=True)
 
 if not st.session_state.quiz_info:
-    st.text_input("What's your student ID?", key="student_name")
+    st.text_input("What's your Name?", key="student_name")
     st.selectbox("Choose the level of **difficulty** for the quiz!", [" ", "easy", "medium", "hard"], key="quiz_difficulty")
     st.text_input("What topic do you want the quiz on?", key="topic_main")
     st.button("Generate Quiz", on_click=quiz_button)
