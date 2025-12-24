@@ -50,6 +50,6 @@ if st.session_state.student_id and not st.session_state.quiz_completed:
 if st.session_state.quiz_completed and not st.session_state.chatbot_completed:
     st.header("Step 4: Learn with the AI Chatbot")
 
-    st.link_button("Go to Chatbot", "https://ai-chatbot-h5ltq4kyzrgrxgrug4bnbv.streamlit.app/")
+    st.link_button("Go to Chatbot", "https://mindpath.streamlit.app/")
     st.session_state.chatbot_completed = True  # Mark chatbot as completed after the link is clicked
 
