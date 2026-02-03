@@ -322,7 +322,7 @@ def submit_button():
 
 
 st.image("logo_mind.png", width=150)
-st.title("MindPath: STEM AI Tutor Quiz") 
+st.title("MindPath: STEM-AI Tutor Quiz") 
 st.header("Let's make STEM learning fun by AI-Powered tutoring!")
 st.markdown("<span style='color:purple'>A Socratic Method Based AI Tutor for Middle Schoolers</span>", unsafe_allow_html=True)
 

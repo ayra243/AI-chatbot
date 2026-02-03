@@ -28,7 +28,7 @@ if "need_help_counter" not in st.session_state:
 if "AI_feedback" not in st.session_state:
     st.session_state.AI_feedback = None
 if "taking_quiz" not in st.session_state:
-    st.session_state.taking_quiz = False
+    st.session_state.taking_quiz = Falsejllkhnkkmncjjenemmcjen
 if "questions" not in st.session_state:
     st.session_state.questions = None
 
@@ -379,7 +379,7 @@ else:
 
 
             
-        st.button("I need help", on_click=need_help_button)
+        st.button("I needd help", on_click=need_help_button)
         if st.session_state.AI_feedback:
             st.write(st.session_state.AI_feedback)
 
