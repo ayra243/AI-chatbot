@@ -28,7 +28,7 @@ if "need_help_counter" not in st.session_state:
 if "AI_feedback" not in st.session_state:
     st.session_state.AI_feedback = None
 if "taking_quiz" not in st.session_state:
-    st.session_state.taking_quiz = Falsejllkhnkkmncjjenemmcjen
+    st.session_state.taking_quiz = False
 if "questions" not in st.session_state:
     st.session_state.questions = None
 
