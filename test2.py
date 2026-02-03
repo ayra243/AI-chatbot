@@ -277,7 +277,7 @@ if st.sidebar.checkbox("Show Debug Info"):
     st.sidebar.write("Number of Messages:", len(st.session_state.messages))
 
 # User Inputs
-name = st.text_input("What is your name?")
+name = st.text_input("Hey, what is your name?")
 if name:
     st.write(f"Hi {name}!")
     st.subheader(f"Hello from your AI Tutor, {name}! Here's how to learn with me:")
