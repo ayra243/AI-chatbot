@@ -32,7 +32,7 @@ if "chatbot_completed" not in st.session_state:
     st.session_state.chatbot_completed = False
 
 if st.session_state.student_id is None:
-    st.header("Step 1 - Generate your student ID")
+    st.header("Step 1: Generate your student ID")
     student_ID = st.button("Generate Student ID")
     if student_ID:
         with st.spinner("Generating..."):
