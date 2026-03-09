@@ -239,7 +239,6 @@ def grade_answers(student_answers, rubric, quiz_data):
                 The student has these answers: {student_answers} and the questions are from {quiz_data}
 
                 RESPONSE FORMAT:
-                At the very end of the quiz, when all the questions hav been reviewed, make sure to give TOTAL_SCORE by student out of total points.
                 For each question, return your evaluation in this exact format with the delimiter '|||' between questions: 
                 QUESTION_NUMBER: [question number]
                 STUDENT_ANSWER: [student's answer]
@@ -327,8 +326,8 @@ def submit_button():
 
 
 st.image("logo_mind.png", width=150)
-st.title(" STEM AI Tutor Quiz") 
-st.header("Let's make STEM learning fun by AI-Powered tutoring!")
+st.title("Quiz Generator") 
+st.header("Let's make MYP learning easy!")
 st.markdown("<span style='color:purple'>IB Learning made easier</span>", unsafe_allow_html=True)
 
 if not st.session_state.quiz_info:
@@ -369,17 +368,17 @@ else:
         col3, col4 = st.columns(2)
         with col3: 
             if st.session_state.current_answer_index > 0:
-                st.button("previous answer", on_click=answers_move_back)
+                st.button("Previous answer", on_click=answers_move_back)
         with col4: 
             if len(st.session_state.graded_results) - 1 > st.session_state.current_answer_index:
-                st.button("next answer", on_click=answers_move_on)
+                st.button("Next answer", on_click=answers_move_on)
         if len(st.session_state.graded_results) - 1 == st.session_state.current_answer_index:
-            st.button("re-take quiz", on_click=retake_quiz)
+            st.button("Re-take quiz", on_click=retake_quiz)
 
 
 
             
-        st.button("I needd help", on_click=need_help_button)
+        st.button("further explanation", on_click=need_help_button)
         if st.session_state.AI_feedback:
             st.write(st.session_state.AI_feedback)
 
