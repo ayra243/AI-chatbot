@@ -262,7 +262,7 @@ def process_user_input(user_input):
 # --- MAIN APP BODY ---
 
 # Branding and Intro
-st.title("MindPath: STEM AI Tutor") 
+st.title("MindPath: STEM AI tutor") 
 st.header("Let's make STEM learning fun by AI-Powered tutoring!")
 st.markdown("<span style='color:purple'>A Socratic Method Based AI Tutor for Middle Schoolers</span>", unsafe_allow_html=True)
 
