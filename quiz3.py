@@ -326,7 +326,7 @@ def submit_button():
 
 
 
-st.image("logo_mind.png", width=150)
+
 st.title("Quiz Generator") 
 st.header("Let's make MYP learning easy!")
 st.markdown("<span style='color:purple'>IB Learning made easier</span>", unsafe_allow_html=True)
