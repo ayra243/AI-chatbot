@@ -243,7 +243,7 @@ def grade_answers(student_answers, rubric, quiz_data):
                 QUESTION_NUMBER: [question number]
                 STUDENT_ANSWER: [student's answer]
                 CORRECT_ANSWER: [correct answer]
-                FEEDBACK: [feedback on their answer]
+                FEEDBACK: [feedback on their answer, explicitly write whether they got it correct or not. add a tick emoji if correct and a cross emoji if wrong]
                 SCORE: [score]
                 |||
                 """},
@@ -251,7 +251,7 @@ def grade_answers(student_answers, rubric, quiz_data):
                                             
                  {"role": "system", "content": "You are an AI teacher grading quizzes"}
              ],
-             temperature=1.08, max_tokens=550, top_p=1, frequency_penalty=0, presence_penalty=0
+             temperature=0.4, max_tokens=550, top_p=1, frequency_penalty=0, presence_penalty=0
             
      )
     graded_text = response.choices[0].message.content
