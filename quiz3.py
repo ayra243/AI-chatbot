@@ -308,7 +308,7 @@ def grade_answers(student_answers, rubric, quiz_data):
             parsed_results.append(question_data)
             if "STUDENT_ANSWER" in question_data: 
                 student_answer_part.append(question_data["STUDENT_ANSWER"])
-            if "CORRECT ANSWER" in question_data: 
+            if "CORRECT_ANSWER" in question_data: 
                 correct_answer_part.append(question_data["CORRECT_ANSWER"])
             if "FEEDBACK" in question_data: 
                 feedback_part.append(question_data["FEEDBACK"])
@@ -318,7 +318,6 @@ def grade_answers(student_answers, rubric, quiz_data):
     supabase_json = {
         "STUDENT_ANSWER": json.dumps(student_answer_part),
         "CORRECT_ANSWER": json.dumps(correct_answer_part),
-        "TOTAL_SCORE": parsed_results[-1],
         "SCORE": json.dumps(score_part),
         "FEEDBACK": json.dumps(feedback_part),
         "QUIZ_ID":  st.session_state.current_quiz,
