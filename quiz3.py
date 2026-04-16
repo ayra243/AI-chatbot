@@ -5,9 +5,7 @@ from supabase import create_client
 import json 
 
 
-# =========================
 # SESSION STATE INITIALISATION
-# =========================
 
 if "quiz_id" not in st.session_state:
     st.session_state.quiz_id = []
@@ -25,8 +23,6 @@ if "graded_results" not in st.session_state:
     st.session_state.graded_results = None
 if "current_answer_index" not in st.session_state:
     st.session_state.current_answer_index = 0
-if "need_help_counter" not in st.session_state:
-    st.session_state.need_help_counter = 0
 if "AI_feedback" not in st.session_state:
     st.session_state.AI_feedback = None
 if "taking_quiz" not in st.session_state:
@@ -35,9 +31,8 @@ if "questions" not in st.session_state:
     st.session_state.questions = None
 
 
-# =========================
+
 # DATABASE & AUTHENTICATION
-# =========================
 
 def init_supabase():
     url = st.secrets["SUPABASE_URL"] 
@@ -50,9 +45,8 @@ if not st.user.is_logged_in:
     st.stop()
 
 
-# =========================
 # QUIZ CREATION & CORE LOGIC
-# =========================
+
 
 def basic(name, difficulty, topic):
     st.session_state.quiz_info = {
@@ -147,9 +141,7 @@ def retrieve_quiz(quiz_id):
     return st.session_state.quiz_bank.get(quiz_id, "Quiz not found!")
 
 
-# =========================
 # NAVIGATION & STATE CONTROL
-# =========================
 
 def update_answers(): 
     while len(st.session_state.student_answer) <= st.session_state.current_question_index:
@@ -183,21 +175,9 @@ def retake_quiz():
     st.session_state.current_question_index = 0
 
 
-# =========================
 # AI FUNCTIONS (API + PROCESSING)
-# =========================
 
 def need_help_button():
-    st.session_state.need_help_counter += 1
-
-    supabase_json = {
-        "QUIZ_ID":  st.session_state.current_quiz,
-        "student id": st.session_state.quiz_info["name"],
-        "need_help_counter": st.session_state.need_help_counter
-    }
-
-    supabase = init_supabase()
-    response = supabase.table("answer table").insert(supabase_json).execute()
 
     client = openai.OpenAI(api_key=st.secrets["OPENAI_API_KEY"]) 
 
@@ -342,9 +322,8 @@ def submit_button():
     st.session_state.taking_quiz = False
 
 
-# =========================
 # MAIN UI (STREAMLIT)
-# =========================
+
 
 st.title("Quiz Generator") 
 st.header("Let's make MYP learning easy!")
